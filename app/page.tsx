@@ -76,16 +76,38 @@ export default function Page() {
       <section className="prose">
         <h2>The approach</h2>
         <p>
-          One ranking number — <strong>Leverage Reach</strong> — and two transparent components
-          beneath it. No weighted “impact score”: weights would be an unargued claim about what
-          matters, and a blended number lets a big value on a cheap signal hide a zero on a real one.
-          Instead, both components are the <strong>same currency</strong> (distinct teammates you made
-          more effective), so the rank is their <strong>set union</strong>.
+          <strong>The question is who created the most leverage — not who shipped the most.</strong> In
+          the LLM era raw output is nearly free, so PR / commit / line counts mostly measure a
+          willingness to accept model output, not skill. The target instead is <strong>leverage</strong>:
+          making other people more effective.
         </p>
         <p>
-          Every input is <strong>leverage-shaped, not count-shaped</strong>: if doing more of it would
-          game the metric, it&apos;s volume in disguise and it&apos;s out. You cannot manufacture other
-          people choosing to act on your review or build on your code.
+          So the ranking is one transparent number — <strong>Leverage Reach</strong>, the count of
+          distinct teammates whose work you measurably advanced — built as the <strong>set union</strong>{" "}
+          of two components. (No weighted “impact score”: weights would be an unargued claim about what
+          matters, and a blend lets a big number on a cheap signal hide a zero on a real one.)
+        </p>
+        <ul>
+          <li>
+            <strong>Review leverage</strong> — distinct authors whose code changed because of your
+            review.
+          </li>
+          <li>
+            <strong>Authorship leverage</strong> — distinct people who built on a source file you
+            created, or referenced your PR.
+          </li>
+        </ul>
+        <p>
+          Two principles hold it together. <strong>Leverage-shaped, not count-shaped:</strong> every
+          signal requires <em>other distinct humans</em> to act, so you can&apos;t game it by shipping
+          more yourself. <strong>A ranked attention-router, not a verdict:</strong> it names a top 5
+          because the brief demands one, but every rank links to the real PRs and the limitations are
+          printed in full — the leader stays the judge.
+        </p>
+        <p>
+          <strong>Rigor:</strong> generated code, test snapshots, lockfiles, CI and migrations are
+          filtered out (traffic, not leverage), deletions don&apos;t count as “building on,” and every
+          number was verified against real PRs — which caught two real bugs before launch.
         </p>
       </section>
 

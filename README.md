@@ -4,6 +4,32 @@ A single-page, interactive dashboard that names the **5 engineers who created th
 the [PostHog/posthog](https://github.com/PostHog/posthog) repo over the **last 90 days** — built for
 an engineering leader who can't read every PR.
 
+**Live:** https://posthog-leverage-dashboard.vercel.app
+
+## Approach at a glance
+
+**The question is who created the most _leverage_ — not who shipped the most.** In the LLM era raw
+output is nearly free, so PR / commit / line counts mostly measure willingness to accept model output,
+not skill. We measure leverage: making other people more effective.
+
+**One number — Leverage Reach:** the count of distinct teammates whose work you measurably advanced,
+as the **set union** of two components (no weighted "impact score" — weights are an unargued claim,
+and a blend lets a big number on a cheap signal hide a zero on a real one):
+
+- **Review leverage** — distinct authors whose code changed because of your review.
+- **Authorship leverage** — distinct people who built on a source file you created, or referenced your PR.
+
+**Two principles:**
+
+- _Leverage-shaped, not count-shaped_ — every signal needs other distinct humans to act, so you can't
+  game it by shipping more yourself.
+- _A ranked attention-router, not a verdict_ — it names a top 5, but every rank links to real PRs and
+  the limitations are printed in full; the leader is the judge.
+
+**Rigor:** generated / snapshot / lockfile / CI / migration files are filtered out (traffic, not
+leverage), deletions don't count as "building on," and every number was verified against real PRs —
+which caught two real bugs before launch.
+
 ## Why not count PRs / commits / lines of code?
 
 In the LLM era, raw output is nearly free, so volume metrics mostly measure *willingness to accept

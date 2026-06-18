@@ -134,6 +134,19 @@ section > h2 {
 .prose strong {
   color: var(--text);
 }
+.prose ul {
+  color: var(--text-dim);
+  font-size: 15.5px;
+  max-width: 780px;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.prose li {
+  margin: 5px 0;
+}
+.prose li strong {
+  color: var(--text);
+}
 
 /* ---- Metric legend cards ---- */
 .legend {
